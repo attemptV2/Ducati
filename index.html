@@ -1,0 +1,83 @@
+﻿<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="light_theme.css">
+        <script src="js/vue.global.prod.js"></script>
+        <title>Vue</title>
+    </head>
+    <body class="light">
+        <div class="scrim" v-show="showScrim"></div>
+        <div class="navigation-panel">
+            <img class="logo" src="icons/ducati-logo.svg">
+            <div class="page-names">
+                <div class="name-page" title="reload">
+                    <p>{{ name1 }}</p>
+                </div>
+                <div class="name-page" @click="aboutPanel">
+                    <p>{{ name2 }}</p>
+                </div>
+                <div class="name-page" @click="modelsPanel">
+                    <p>{{ name3 }}</p>
+                </div>
+            </div>
+            <img class="change-theme" src="icons/dark-theme.svg">
+        </div>
+        <div class="home-page">
+            <div class="videos-cont">
+                <div class="home-page_videos">
+                    <video autoplay muted loop controls src="videos/ducati-rider.mp4"></video>
+                    <video autoplay muted loop controls src="videos/ducati-rider2.mp4"></video>
+                    <video autoplay muted loop controls src="videos/ducati-rider3.mp4"></video>
+                </div>
+                <div class="openVideos">
+                    <img class="chevron-right">
+                </div>
+            </div>
+            <img class="main-title" src="icons/ducati_main_title.svg">
+            <div class="videos-cont">
+                <div class="openVideos">
+                    <img class="chevron-left">
+                </div>
+                <div class="home-page_videos">
+                    <video autoplay loop muted controls src="videos/ducati-center.mp4"></video>
+                    <video autoplay loop muted controls src="videos/ducati-center2.mp4"></video>
+                    <video autoplay loop muted controls src="videos/ducati-center3.mp4"></video>
+                </div>
+            </div>
+        </div>
+        <div class="panel-ducati" v-show="showAboutPanel">
+            <div class="about-title">
+                <h1>ABOUT</h1>
+                <div class="close-cont" @click="closePanel">
+                    <img src="icons/close_dark-theme.svg">
+                </div>
+            </div>
+            <p> <span>DUCATI</span> is an Italian motorcycle manufacturing company headquartered in Bologna, Italy. The company is directly owned by Italian automotive manufacturer Lamborghini, whose German parent company is Audi, itself owned by the Volkswagen Group.
+                <br> While <span>DUCATI's</span> journey may have begun in Italy, it has proceeded all around the world. While the bulk of our production activities are still carried out in Borgo Panigale, the desire to improve the Brand’s competitiveness has even driven us to expand to some of the most complex markets.
+                <br> <span>DUCATI</span> also has ten subsidiaries representing the company all over the world. Each subsidiary is tasked with developing its reference market and coordinating a wide-reaching sales and customer support network that covers 92 Countries, amounting to a total of 790 dealers and service points.</p>
+        </div>
+        
+        <div class="panel-ducati" v-show="showModelsPanel">
+            <div class="about-title">
+                <h1>MODELS</h1>
+                <div class="close-cont" @click="closePanel">
+                    <img src="icons/close_dark-theme.svg">
+                </div>
+            </div>
+            <div class="slider">
+                <div class="slides" v-html="slides">
+                    
+                </div>
+                <img class="prev chevron-left" onclick="changeSlide(-1)">
+                <img class="next chevron-right" onclick="changeSlide(1)">
+            </div>
+        </div>
+    </body>
+</html>
+
+<script src="js/main.js"></script>
+<script src="js/index.js"></script>

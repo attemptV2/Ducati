@@ -21,3 +21,9 @@
 .light .videos-title h1{
     color: white;
 }
+.light .chevron-left{
+    content: url("../icons/chevron-left-black.svg");
+}
+.light .chevron-right{
+    content: url("../icons/chevron-right-black.svg");
+}

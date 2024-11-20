@@ -9,12 +9,14 @@
         <script src="js/vue.global.prod.js"></script>
         <title>Vue</title>
     </head>
-    <body class="light">
+    <body :class="{ light: isLightTheme }">
+    
         <div class="scrim" v-show="showScrim"></div>
+        
         <div class="navigation-panel">
             <img class="logo" src="icons/ducati-logo.svg">
             <div class="page-names">
-                <div class="name-page" title="reload">
+                <div class="name-page" title="reload" @click="reloadPage">
                     <p>{{ name1 }}</p>
                 </div>
                 <div class="name-page" @click="aboutPanel">
@@ -24,31 +26,34 @@
                     <p>{{ name3 }}</p>
                 </div>
             </div>
-            <img class="change-theme" src="icons/dark-theme.svg">
+            <img class="change-theme" @click="toggleTheme" :src="themeIcon">
         </div>
+        
         <div class="home-page">
             <div class="videos-cont">
-                <div class="home-page_videos">
+                <div class="home-page_videos" :style="{ width: videosVisible ? '95%' : '0' }">
                     <video autoplay muted loop controls src="videos/ducati-rider.mp4"></video>
                     <video autoplay muted loop controls src="videos/ducati-rider2.mp4"></video>
                     <video autoplay muted loop controls src="videos/ducati-rider3.mp4"></video>
                 </div>
-                <div class="openVideos">
-                    <img class="chevron-right">
+                <div class="openVideos" @click="toggleVideos">
+                    <img :class="buttonImgClass">
                 </div>
             </div>
             <img class="main-title" src="icons/ducati_main_title.svg">
+            <img class="main-title-light" src="icons/ducati_main_title-dark.svg">
             <div class="videos-cont">
-                <div class="openVideos">
-                    <img class="chevron-left">
+                <div class="openVideos" @click="toggleVideosRight">
+                    <img class="chevron-left" :class="buttonImgClassRight">
                 </div>
-                <div class="home-page_videos">
+                <div class="home-page_videos" :style="{ width: videosVisibleRight ? '95%' : '0' }">
                     <video autoplay loop muted controls src="videos/ducati-center.mp4"></video>
                     <video autoplay loop muted controls src="videos/ducati-center2.mp4"></video>
                     <video autoplay loop muted controls src="videos/ducati-center3.mp4"></video>
                 </div>
             </div>
         </div>
+        
         <div class="panel-ducati" v-show="showAboutPanel">
             <div class="about-title">
                 <h1>ABOUT</h1>
@@ -69,14 +74,18 @@
                 </div>
             </div>
             <div class="slider">
-                <div class="slides" v-html="slides">
+                <div class="slides" :style="{ transform: `translateX(${offset}%)` }">
+                    <div class="slide" v-for="(slide, index) in slides" :key="index">
+                        <img :src="slide.image" alt="Slide Image">
+                        <p v-html="slide.description"></p>
+                    </div>
                 </div>
-                <img class="prev chevron-left" onclick="changeSlide(-1)">
-                <img class="next chevron-right" onclick="changeSlide(1)">
+                <img class="prev chevron-left" @click="changeSlide(-1)">
+                <img class="next chevron-right" @click="changeSlide(1)">
             </div>
         </div>
+    
     </body>
 </html>
 
 <script src="js/main.js"></script>
-<script src="js/index.js"></script>

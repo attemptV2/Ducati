@@ -8,6 +8,15 @@
 .light .name-page:hover{
     color: #292929;
 }
+.light .main-title-light{
+    position: fixed;
+    z-index: -1;
+    left: 410px;
+    visibility: visible;
+}
+.light .main-title{
+    visibility: hidden;
+}
 .light .close-cont img{
     content: url("../icons/close_light-theme.svg");
 }
@@ -21,9 +30,9 @@
 .light .videos-title h1{
     color: white;
 }
-.light .chevron-left{
+.light .panel-ducati .chevron-left{
     content: url("../icons/chevron-left-black.svg");
 }
-.light .chevron-right{
+.light .panel-ducati .chevron-right{
     content: url("../icons/chevron-right-black.svg");
 }

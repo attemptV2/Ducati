@@ -117,7 +117,7 @@ h1{
 }
 .videos-cont{
     display: flex;
-    align-items: center;
+    align-items: center; 
 }
 .panel-ducati{
     background: #000000;

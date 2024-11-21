@@ -65,12 +65,11 @@ h1{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: url("../icons/red-moto.svg") no-repeat 50% 200px;
-    background-size: 40%;
+    background: url("../icons/main-bg_dark.svg") no-repeat 50% 150px;
+    transform: translateX(-20px);
     margin: auto;
     height: 100%;
     opacity: 0;
-    transform: translateX(-20px); 
     animation: fadeIn 0.5s forwards; 
 }
 .home-page video{
@@ -102,15 +101,20 @@ h1{
 }
 .openVideos{
     background: #d60000;
-    border-radius: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 60px;
-    max-width: 75px;
+    min-width: 55px;
     height: 60px;
-    margin: 10px;
+    margin: 0;
     cursor: pointer;
+    transition: transform 0.3s;
+}
+.right-videos{
+    border-radius: 100% 0 0 100% ;
+}
+.left-videos{
+    border-radius: 0 100% 100% 0 ;
 }
 .openVideos:hover{
     transform: scale(1.1);
@@ -209,5 +213,4 @@ span{
 .chevron-right{
     content: url("../icons/chevron-right.svg");
 }
-
 

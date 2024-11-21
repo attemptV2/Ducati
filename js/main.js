@@ -41,7 +41,7 @@ createApp({
             return this.videosVisible ? 'chevron-left' : 'chevron-right'; 
         },
         buttonImgClassRight() {
-            return this.videosVisibleRight ? 'chevron-left' : 'chevron-right'; 
+            return this.videosVisibleRight ? 'chevron-right': 'chevron-left'; 
         }
     },
     methods: {

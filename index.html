@@ -36,15 +36,13 @@
                     <video autoplay muted loop controls src="videos/ducati-rider2.mp4"></video>
                     <video autoplay muted loop controls src="videos/ducati-rider3.mp4"></video>
                 </div>
-                <div class="openVideos" @click="toggleVideos">
+                <div class="openVideos left-videos" @click="toggleVideos">
                     <img :class="buttonImgClass">
                 </div>
             </div>
-            <img class="main-title" src="icons/ducati_main_title.svg">
-            <img class="main-title-light" src="icons/ducati_main_title-dark.svg">
             <div class="videos-cont">
-                <div class="openVideos" @click="toggleVideosRight">
-                    <img class="chevron-left" :class="buttonImgClassRight">
+                <div class="openVideos right-videos" @click="toggleVideosRight">
+                    <img :class="buttonImgClassRight">
                 </div>
                 <div class="home-page_videos" :style="{ width: videosVisibleRight ? '95%' : '0' }">
                     <video autoplay loop muted controls src="videos/ducati-center.mp4"></video>

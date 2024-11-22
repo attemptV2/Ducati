@@ -29,6 +29,28 @@
             <img class="change-theme" @click="toggleTheme" :src="themeIcon">
         </div>
         
+        <div class="navigation-panel for-min-width hidden">
+            <img class="logo" src="icons/ducati-logo.svg">
+            <div class="page-names" v-show="showAllVideos">
+                <div class="close-cont" @click="closePanel">
+                    <img class="change-theme" @click="toggleTheme" :src="themeIcon">
+                    <img src="icons/close_dark-theme.svg">
+                </div>
+                <div class="name-page" title="reload" @click="reloadPage">
+                    <p>{{ name1 }}</p>
+                </div>
+                <div class="name-page" @click="aboutPanel">
+                    <p>{{ name2 }}</p>
+                </div>
+                <div class="name-page" @click="modelsPanel">
+                    <p>{{ name3 }}</p>
+                </div>
+                <div class="name-page" @click="videosPanel">
+                    <p>{{ name4 }}</p>
+                </div>
+            </div>
+        </div>
+        
         <div class="home-page">
             <div class="videos-cont">
                 <div class="home-page_videos" :style="{ width: videosVisible ? '95%' : '0' }">

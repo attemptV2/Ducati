@@ -29,25 +29,28 @@
             <img class="change-theme" @click="toggleTheme" :src="themeIcon">
         </div>
         
-        <div class="navigation-panel for-min-width hidden">
+        <div class="navigation-panel for-min-width">
             <img class="logo" src="icons/ducati-logo.svg">
-            <div class="page-names" v-show="showAllVideos">
+            <img class="menu-min-width" src="icons/menu.svg" @click="menuShow">
+        </div>
+        <div class="page-names" v-show="showMenu">
+            <div class="menu-head">
+                <img class="change-theme" @click="toggleTheme" :src="themeIcon">
                 <div class="close-cont" @click="closePanel">
-                    <img class="change-theme" @click="toggleTheme" :src="themeIcon">
                     <img src="icons/close_dark-theme.svg">
                 </div>
-                <div class="name-page" title="reload" @click="reloadPage">
-                    <p>{{ name1 }}</p>
-                </div>
-                <div class="name-page" @click="aboutPanel">
-                    <p>{{ name2 }}</p>
-                </div>
-                <div class="name-page" @click="modelsPanel">
-                    <p>{{ name3 }}</p>
-                </div>
-                <div class="name-page" @click="videosPanel">
-                    <p>{{ name4 }}</p>
-                </div>
+            </div>
+            <div class="name-page" title="reload" @click="reloadPage">
+                <p>{{ name1 }}</p>
+            </div>
+            <div class="name-page" @click="aboutPanel">
+                <p>{{ name2 }}</p>
+            </div>
+            <div class="name-page" @click="modelsPanel">
+                <p>{{ name3 }}</p>
+            </div>
+            <div class="name-page" @click="videosPanel">
+                <p>{{ name4 }}</p>
             </div>
         </div>
         

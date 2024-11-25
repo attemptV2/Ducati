@@ -14,7 +14,7 @@ createApp({
             showAboutPanel: false,
             showModelsPanel: false,
             showScrim: false,
-            showAllVideos:false,
+            showMenu: false,
             currentSlide: 0,
             slides: [
                 { image: 'icons/model1.png', description: '<span>DUCATI</span> Panigale V4 2020' },
@@ -47,6 +47,9 @@ createApp({
         }
     },
     methods: {
+        menuShow() {
+            this.showMenu = true;
+        },
         aboutPanel() {
             this.showAboutPanel = true;
             this.showModelsPanel = false;
@@ -61,6 +64,7 @@ createApp({
             this.showAboutPanel = false;
             this.showModelsPanel = false;
             this.showScrim = false;
+            this.showMenu = false;
         },
         changeSlide(direction) {
             this.currentSlide += direction;
@@ -88,18 +92,3 @@ createApp({
         }
     }
 }).mount(document.body)
-
-
-function updateNavigationPanel() {
-    if (window.innerWidth < 600) {
-        document.querySelector('.navigation-panel.for-min-width').classList.remove('hidden');
-        document.querySelector('.navigation-panel').classList.add('hidden');
-    } else {
-        document.querySelector('.navigation-panel.for-min-width').classList.add('hidden');
-        document.querySelector('.navigation-panel').classList.remove('hidden');
-    }
-}
-
-window.addEventListener('resize', updateNavigationPanel);
-
-updateNavigationPanel();

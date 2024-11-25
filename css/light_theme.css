@@ -12,6 +12,12 @@
     background: url("../icons/main-bg_light.svg") no-repeat 50% 150px;
     transform: translateX(-20px);
 }
+.light .page-names{
+    background: white;
+}
+.light .menu-min-width{
+    content: url("../icons/menu_dark.svg");
+}
 .light .main-title-light{
     position: fixed;
     z-index: -1;
